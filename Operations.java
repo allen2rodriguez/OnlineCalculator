@@ -4,60 +4,64 @@ public class Operations {
 
     /*========== Arithmetic Operations ==========*/
     //add
-    public static add(double a, double b) {
+    public double add(double a, double b) {
         return a + b;
     }
 
     //subtract 
-    public static sub(double a, double b) {
+    public double sub(double a, double b) {
         return a - b;
     }
 
     //multiply 
-    public static multi(double a, double b) {
+    public double multi(double a, double b) {
         return a * b;
     }
 
     //divide
-    public static div(double a, double b) {
+    public double div(double a, double b) {
         if (b == 0) {
-            return system.out.Println("Cannot divide by 0")
+            return Double.NaN;
         } else {
             return a / b;
         }
     }
 
     //modulus
-    public static mod(double a, double b) {
+    public double mod(double a, double b) {
         if (b == 0) {
-            return system.out.Println("Cannot divide by 0")
+            return Double.NaN;
         } else {
             return a % b;
         }
     }
 
     //exponentiation
-    public static exp(double a, double b) {
-        //Enter the math.exp or whatever it is
+    public double exp(double a, double b) {
+        return Math.pow(a,b);
     }
 
     //square root
-    public static root(double a) {
-        //enter math.sqreroot or whatever it is
+    public double root(double a) {
+        if (a >= 0) {
+            return Math.sqrt(a);
+        } else {
+            reutrn Double.NaN;
+        }
     }
 
     //factorial
-    public static fac(int a) {
-        //Consider adding a if statment to check if the thing is a int
-        while (a > 1) {
+    public double fac(int a) {
+        while (a == 1) {
+            return 1;
+        } else {
             return a * fac(a-1);
         }
     }
 
-
     /*============= Memory Function ================*/
-    //Constructor to initilize memory: Might need its own class 
-    public void MemoryCalculator() {
+    //Constructor to initilize memory
+    public void Operations() {
         this.memory = 0;
     }
 
@@ -67,9 +71,7 @@ public class Operations {
     }
 
     //Recall memory (AKA: ANS)
-    public doudble memoryRecall() {
+    public double memoryRecall() {
         reurn this.memory;
     } 
-
-    //Alternate betweem 
 }
