@@ -10,39 +10,32 @@ public class CalculatorServlet extends HttpServlet {
     private Operations operations = new Operations();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        double num1 = Double.parseDouble(request.getParameter("num1"));
-        double num2 = Double.parseDouble(request.getParameter("num2"));
-        String operation = request.getParameter("operation");
-        double result = 0;
-
-        switch (operation) {
-            case "add":
-                result = operations.add(num1, num2);
-                break;
-            case "subtract":
-                result = operations.sub(num1, num2);
-                break;
-            case "multiply":
-                result = operations.multi(num1, num2);
-                break;
-            case "divide":
-                result = operations.div(num1, num2);
-                break;
-            case "modulus":
-                result = operations.mod(num1, num2);
-                break;
-            case "exponentiation":
-                result = operations.exp(num1, num2);
-                break;
-            case "square_root":
-                result = operations.root(num1);
-                break;
-            case "factorial":
-                result = operations.fac((int) num1);
-                break;
-        }
+        String input = request.getParameter("input");
+        double result = evaluate(input);
 
         response.setContentType("text/html");
         response.getWriter().println("Result: " + result);
+    }
+
+    private double evaluate(String input) {
+        // Parse and evaluate the input string using your Operations class
+        // This is a simplified example and doesn't handle errors or complex expressions
+        String[] tokens = input.split(" ");
+        double num1 = Double.parseDouble(tokens[0]);
+        String operator = tokens[1];
+        double num2 = Double.parseDouble(tokens[2]);
+
+        switch (operator) {
+            case "+":
+                return operations.add(num1, num2);
+            case "-":
+                return operations.sub(num1, num2);
+            case "*":
+                return operations.multi(num1, num2);
+            case "/":
+                return operations.div(num1, num2);
+            default:
+                return Double.NaN;
+        }
     }
 }
