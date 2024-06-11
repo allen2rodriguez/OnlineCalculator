@@ -1,3 +1,15 @@
+//Get python to run all operations 
+//Test python
+//Get python weather API
+//Test Python
+//Get html set up css (nav, colors, etc)
+//Plug in weather python into the html
+//Create Calculator butttons
+//Add in operations of python
+
+
+
+ 
  <!-- JavaScript code for the calculator -->
         <script>
             function insert(num) {
