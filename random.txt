@@ -1,0 +1,40 @@
+ <!-- JavaScript code for the calculator -->
+        <script>
+            function insert(num) {
+                document.getElementById('display').value += num;
+            }
+    
+            function clearDisplay() {
+                document.getElementById('display').value = '';
+            }
+    
+            function calculate() {
+                let input = document.getElementById('display').value;
+                let result = eval(input); // Use a safe method or server-side calculation for production
+                document.getElementById('display').value = result;
+            }
+        </script>
+
+<!-- Calculator -->
+        <div class="calc">
+            <input type="text" class="display">
+            <div class="butttons">
+                <button class="button" onclick="insert('1')">1</button>
+                <button class="button" onclick="insert('2')">2</button>
+                <button class="button" onclick="insert('3')">3</button>
+                <button class="button" onclick="insert('+')">+</button>
+                <button class="button" onclick="insert('4')">4</button>
+                <button class="button" onclick="insert('5')">5</button>
+                <button class="button" onclick="insert('6')">6</button>
+                <button class="button" onclick="insert('-')">-</button>
+                <button class="button" onclick="insert('7')">7</button>
+                <button class="button" onclick="insert('8')">8</button>
+                <button class="button" onclick="insert('9')">9</button>
+                <button class="button" onclick="insert('*')">*</button>
+                <button class="button" onclick="clearDisplay()">C</button>
+                <button class="button" onclick="insert('0')">0</button>
+                <button class="button" onclick="insert('.')">.</button>
+                <button class="button" onclick="insert('/')">/</button>
+                <button class="button" onclick="calculate()">=</button>
+            </div>
+        </div>
