@@ -50,3 +50,20 @@
                 <button class="button" onclick="calculate()">=</button>
             </div>
         </div>
+
+
+
+//Testing of the memory functions for python: 
+    # Memory Function
+    def clear(self):
+        self.memory = 0
+
+    def memoryRecall(self):
+        return self.memory
+
+    # Test memory functions
+    print("Memory Recall:", ops.memoryRecall())  # Expected output: 0
+    ops.memory = 10  # Set memory to 10
+    print("Memory Recall after setting:", ops.memoryRecall())  # Expected output: 10
+    ops.clear()  # Clear memory
+    print("Memory Recall after clearing:", ops.memoryRecall())  # Expected output: 0

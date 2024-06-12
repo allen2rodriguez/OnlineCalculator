@@ -40,13 +40,6 @@ class Operations:
         else:
             return a * self.fac(a - 1)
 
-    # Memory Function
-    def clear(self):
-        self.memory = 0
-
-    def memoryRecall(self):
-        return self.memory
-
 
 #Testing of the Operations:
 ops = Operations()
@@ -60,10 +53,3 @@ print("Modulus:", ops.mod(5, 3))  # Expected output: 2
 print("Exponentiation:", ops.exp(2, 3))  # Expected output: 8
 print("Square Root:", ops.root(9))  # Expected output: 3.0
 print("Factorial:", ops.fac(5))  # Expected output: 120
-
-# Test memory functions
-print("Memory Recall:", ops.memoryRecall())  # Expected output: 0
-ops.memory = 10  # Set memory to 10
-print("Memory Recall after setting:", ops.memoryRecall())  # Expected output: 10
-ops.clear()  # Clear memory
-print("Memory Recall after clearing:", ops.memoryRecall())  # Expected output: 0

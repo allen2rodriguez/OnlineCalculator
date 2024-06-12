@@ -1,5 +1,5 @@
 # Import the Operations class
-from operations import Operations
+from Operations import Operations
 
 def main():
     # Create an instance of the Operations class
